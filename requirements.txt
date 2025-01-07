@@ -1,0 +1,6 @@
+Flask
+Flask-Cors
+geopy
+numpy
+pandas
+python-dotenv

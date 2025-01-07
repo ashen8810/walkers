@@ -4,3 +4,9 @@ geopy
 numpy
 pandas
 python-dotenv
+click
+itsdangerous
+Jinja2
+markupsafe
+Werkzeug
+gunicorn

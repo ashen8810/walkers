@@ -13,7 +13,7 @@ from src.transport_utils_0_6 import get_transport_cost
 from src.saarc_utils_0_7_ import get_saarc_entrance_fees
 from src.activities_utils_0_4 import get_activities_by_locations
 
-def generate_trip_details(locations, hotel_list, start_date, end_date, duration, pax_size):
+def generate_trip_details(locations, hotel_list, start_date, end_date, duration, pax_size,distance):
     trip_details = []
     total_days = 0
     current_date = pd.to_datetime(start_date)
@@ -28,7 +28,7 @@ def generate_trip_details(locations, hotel_list, start_date, end_date, duration,
     saarc_fees = load_saarc_fees(config["paths"]["saarc_fees_data"])
 
     selected_locations = find_best_tour_with_days(iternary, locations, duration)
-    path, distance = find_shortest_path(selected_locations)
+    path, distance1 = find_shortest_path(selected_locations)
     activities = get_activities_by_locations(iternary,path)
     hotel_info = get_hotel_location(hotel, hotel_list)
     transport_cost = get_transport_cost(transport_data,pax_size,distance)

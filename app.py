@@ -86,7 +86,7 @@ def get_report():
       hotels = data.get('hotels',[])
       # star = data.get("category")
       # budget = data.get("budget")
-      # distance = data.get("distance")
+      distance = data.get("distance")
       # double = data.get("double")
       # single = data.get("single")
       # triple = data.get("triple")
@@ -107,7 +107,7 @@ def get_report():
           else:
               return data
 
-      reports = main.generate_trip_details(locations, hotels, start_date.split("T")[0],end_date.split("T")[0],duration['days'],pax_size)
+      reports = main.generate_trip_details(locations, hotels, start_date.split("T")[0],end_date.split("T")[0],duration['days'],pax_size,distance)
       reports = capitalize_values(reports)
       print(reports)
       # reports = { "trips": [{'startDate': '2024-12-01', 'endDate': '2024-12-03', 'location': 'kandy', 'hotel': 'devon', 'activities': ['pinnawela elephant orphanage', 'cultural dance show ', 'kandy temple'], 'duration_of_stay': 3, 'rates': {'Single Half Board Rate': 47.0, 'Single Full Board Rate': 57.0, 'Single BB Rate': 37.0}}, {'startDate': '2024-12-04', 'endDate': '2024-12-07', 'location': 'colombo', 'hotel': 'ocean edge', 'activities': ['colombo city tour & shopping ', 'lotus tower', 'departure airport drop'], 'duration_of_stay': 4, 'rates': {'Single Half Board Rate': 55.0, 'Single Full Board Rate': 65.0, 'Single BB Rate': 45.0}}], 'transport_type': 'Coach', 'transport_cost': 3789.5, 'fees': [{'activity': 'pinnawela elephant orphanage', 'adultFee': '10 $', 'childFee': '0 $'}]}

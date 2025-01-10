@@ -26,7 +26,9 @@ def calculate_distances(selected_locations):
     """Calculate distances between selected locations."""
     coordinates = {}
     for location, *_ in selected_locations:
-        lat, lon = geocodes(location)
+        # lat, lon = geocodes(location)
+        lat, lon = (6.9271, 79.8612)  # Hardcoded coordinates for Colombo
+
         if lat is not None and lon is not None:
             coordinates[location] = (lat, lon)
         else:
